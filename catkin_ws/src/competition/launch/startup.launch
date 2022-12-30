@@ -1,0 +1,8 @@
+<launch>
+    <node name="serial_node" pkg="rosserial_python" type="serial_node.py">
+    <param name="port" type="string" value="/dev/ttyACM0"/>
+    </node>
+    <node name="input" pkg="competition" type="input.py" output = "screen" />
+    <node name="command" pkg = "competition" type = "command.py" />
+    <node name="controller" pkg="competition" type="motor_controller.py" />
+</launch>
